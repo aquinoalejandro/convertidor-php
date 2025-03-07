@@ -54,7 +54,14 @@ if (isset($_POST['convertir'])) {
     $convertir_desde = convertir_a_metros($valor, $desde);
     $convertir_hasta = convertir_desde_metros($convertir_desde, $hasta);
 
-    $resultado= number_format($convertir_hasta,2);
+    if ($convertir_hasta < 1)
+    {
+        $resultado = number_format($convertir_hasta, 2);
+    }
+    else
+    {
+        $resultado = $convertir_hasta;
+    }
 
     
 }
